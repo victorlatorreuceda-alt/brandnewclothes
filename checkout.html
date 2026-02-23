@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout</title>
+</head>
+<body style="font-family:Arial; max-width:900px; margin:40px auto; padding:0 16px;">
+  <h1>Checkout (ficticio)</h1>
+  <p><a href="index.html">← Volver</a></p>
+
+  <div style="border:1px solid #ddd; border-radius:12px; padding:16px;">
+    <p>Simulación de begin_checkout / purchase sin dinero real.</p>
+    <button id="begin_checkout">Begin checkout</button>
+    <button id="purchase">Purchase (fake)</button>
+  </div>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    document.getElementById('begin_checkout').addEventListener('click', () => {
+      window.dataLayer.push({ event: 'begin_checkout', currency: 'EUR', value: 9.99 });
+      alert('begin_checkout (fake)');
+    });
+    document.getElementById('purchase').addEventListener('click', () => {
+      window.dataLayer.push({ event: 'purchase', transaction_id: String(Date.now()), currency: 'EUR', value: 9.99 });
+      alert('purchase (fake)');
+    });
+  </script>
+</body>
+</html>
