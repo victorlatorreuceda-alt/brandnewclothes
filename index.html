@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Web de Pruebas GA4 + GTM</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px; line-height: 1.4; }
+    header { display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 16px 0; }
+    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #333; background: #fff; cursor: pointer; }
+    input { padding: 10px 12px; border-radius: 10px; border: 1px solid #aaa; width: 100%; }
+    nav a { margin-right: 12px; }
+    .muted { color: #666; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Laboratorio de medición</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </header>
+
+  <p class="muted">Esta web está hecha para practicar GA4 y GTM con eventos (click, scroll, form submit, funnel).</p>
+
+  <div class="card">
+    <h2>CTA principal</h2>
+    <button id="cta_main">Click CTA</button>
+  </div>
+
+  <div class="card">
+    <h2>Formulario (lead)</h2>
+    <form id="lead_form">
+      <label>Email</label><br/>
+      <input id="email" name="email" type="email" placeholder="tu@email.com" required />
+      <br/><br/>
+      <button type="submit">Enviar</button>
+    </form>
+    <p class="muted" id="lead_msg" style="display:none;">Enviado (fake). Ideal para evento generate_lead.</p>
+  </div>
+
+  <div class="card">
+    <h2>Scroll test</h2>
+    <p>Haz scroll para disparar triggers de scroll (25/50/75/90%).</p>
+    <div style="height:1200px;"></div>
+    <p>Fin.</p>
+  </div>
+
+  <script>
+    // Eventos "fake" para practicar (GTM puede capturar clicks y submits sin tocar JS,
+    // pero esto te permite también practicar dataLayer si quieres)
+    window.dataLayer = window.dataLayer || [];
+
+    document.getElementById('cta_main').addEventListener('click', () => {
+      window.dataLayer.push({ event: 'cta_click', cta_name: 'main_cta' });
+      alert('CTA click (prueba).');
+    });
+
+    document.getElementById('lead_form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value || '';
+      window.dataLayer.push({ event: 'lead_submit', lead_email_domain: email.split('@')[1] || '' });
+      document.getElementById('lead_msg').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
