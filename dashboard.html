@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard</title>
+
+ <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M4LBPDSQ');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4LBPDSQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <h1>Dashboard</h1>
+
+  <nav>
+    <a href="index.html">Inicio</a> |
+    <a href="pricing.html">Pricing</a> |
+    <a href="checkout.html">Checkout</a> |
+    <a href="signup.html">Signup</a> |
+    <a href="login.html">Login</a> |
+    <a href="dashboard.html">Dashboard</a> |
+    <a href="content.html">Content</a> |
+    <a href="support.html">Support</a>
+  </nav>
+  <hr/>
+
+  <p>Zona simulada.</p>
+
+  <button id="feature_a">Usar Feature A</button>
+  <button id="feature_b">Usar Feature B</button>
+  <button id="logout_btn">Logout</button>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    document.getElementById('feature_a').addEventListener('click', function(){
+      window.dataLayer.push({ event: 'feature_use', feature_name: 'A' });
+      alert('Feature A usada');
+    });
+    document.getElementById('feature_b').addEventListener('click', function(){
+      window.dataLayer.push({ event: 'feature_use', feature_name: 'B' });
+      alert('Feature B usada');
+    });
+    document.getElementById('logout_btn').addEventListener('click', function(){
+      window.dataLayer.push({ event: 'logout' });
+      location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
