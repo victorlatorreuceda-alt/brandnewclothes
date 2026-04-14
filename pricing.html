@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="es">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HabitFlow Pricing</title>
+
   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -8,40 +12,330 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-M4LBPDSQ');</script>
 <!-- End Google Tag Manager -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pricing</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+      line-height: 1.5;
+    }
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 18px 0;
+    }
+    .brand {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #374151;
+      font-size: 14px;
+    }
+    .hero {
+      padding: 68px 0 28px;
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 42px;
+      margin: 0 0 14px;
+      color: #111827;
+    }
+    .subtitle {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #6b7280;
+      font-size: 18px;
+    }
+    .plans {
+      padding: 28px 0 72px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+    .plan {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+    }
+    .plan.featured {
+      border: 2px solid #2563eb;
+      transform: translateY(-6px);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #1d4ed8;
+      background: #dbeafe;
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .plan h2 {
+      margin: 0 0 8px;
+      color: #111827;
+    }
+    .price {
+      font-size: 40px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 6px;
+    }
+    .price small {
+      font-size: 16px;
+      color: #6b7280;
+      font-weight: 400;
+    }
+    .desc {
+      color: #6b7280;
+      margin-bottom: 18px;
+    }
+    ul {
+      padding-left: 18px;
+      margin: 0 0 24px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .btn {
+      margin-top: auto;
+      display: inline-block;
+      text-align: center;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #2563eb;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+    }
+    .btn-secondary {
+      background: white;
+      color: #2563eb;
+    }
+    .faq {
+      padding: 0 0 72px;
+    }
+    .faq-box {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 28px;
+    }
+    .faq-item {
+      margin-bottom: 18px;
+    }
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+    footer {
+      padding: 28px 0 48px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .plan.featured {
+        transform: none;
+      }
+      h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
 </head>
-<body style="font-family:Arial; max-width:900px; margin:40px auto; padding:0 16px;">
+<body>
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4LBPDSQ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <h1>Pricing</h1>
-  <nav>
-  <a href="index.html">Inicio</a> |
-  <a href="pricing.html">Pricing</a> |
-  <a href="checkout.html">Checkout</a> |
-  <a href="signup.html">Signup</a> |
-  <a href="login.html">Login</a> |
-  <a href="dashboard.html">Dashboard</a> |
-  <a href="content.html">Content</a> |
-  <a href="support.html">Support</a>
-</nav>
-<hr/>
-  <p><a href="index.html">← Volver</a></p>
 
-  <div style="border:1px solid #ddd; border-radius:12px; padding:16px;">
-    <h2>Plan Pro</h2>
-    <p>9,99€/mes (ficticio)</p>
-    <button id="pricing_cta">Elegir plan</button>
-  </div>
+  <header>
+    <div class="container topbar">
+      <a class="brand" href="index.html">HabitFlow</a>
+
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="signup.html">Signup</a>
+        <a href="login.html">Login</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="content.html">Content</a>
+        <a href="support.html">Support</a>
+        <a href="checkout.html">Checkout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Flexible plans for different stages</span>
+        <h1>Simple pricing for consistent progress</h1>
+        <p class="subtitle">
+          Start free, upgrade when you need more visibility and use this page to test plan selection,
+          checkout intent and purchase behaviour.
+        </p>
+      </div>
+    </section>
+
+    <section class="plans">
+      <div class="container">
+        <div class="grid">
+          <div class="plan">
+            <h2>Free</h2>
+            <div class="price">€0 <small>/ month</small></div>
+            <p class="desc">For users getting started with basic habit tracking.</p>
+
+            <ul>
+              <li>Track up to 3 habits</li>
+              <li>Basic daily check-ins</li>
+              <li>Simple progress view</li>
+              <li>No advanced insights</li>
+            </ul>
+
+            <a class="btn btn-secondary plan-btn"
+               href="checkout.html"
+               data-plan="free"
+               data-value="0"
+               id="plan_free">Choose Free</a>
+          </div>
+
+          <div class="plan featured">
+            <span class="badge">Most popular</span>
+            <h2>Pro</h2>
+            <div class="price">€9.99 <small>/ month</small></div>
+            <p class="desc">For users who want more control and better accountability.</p>
+
+            <ul>
+              <li>Unlimited habits</li>
+              <li>Reminders and streaks</li>
+              <li>Weekly progress insights</li>
+              <li>Better tracking flexibility</li>
+            </ul>
+
+            <a class="btn btn-primary plan-btn"
+               href="checkout.html"
+               data-plan="pro"
+               data-value="9.99"
+               id="plan_pro">Choose Pro</a>
+          </div>
+
+          <div class="plan">
+            <h2>Premium</h2>
+            <div class="price">€19.99 <small>/ month</small></div>
+            <p class="desc">For users who want deeper analytics and more advanced features.</p>
+
+            <ul>
+              <li>Everything in Pro</li>
+              <li>Advanced habit analytics</li>
+              <li>Priority support</li>
+              <li>Expanded progress insights</li>
+            </ul>
+
+            <a class="btn btn-secondary plan-btn"
+               href="checkout.html"
+               data-plan="premium"
+               data-value="19.99"
+               id="plan_premium">Choose Premium</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <div class="faq-box">
+          <div class="faq-item">
+            <h3>Can I start for free?</h3>
+            <p>Yes. The free plan gives you a simple way to test the experience before upgrading.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I switch plans later?</h3>
+            <p>Yes. You can upgrade or downgrade your plan whenever your needs change.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Is this page ready for analytics testing?</h3>
+            <p>Yes. It is structured to support plan selection, checkout flow and purchase event testing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      HabitFlow pricing — demo page for plan selection and conversion analysis.
+    </div>
+  </footer>
 
   <script>
     window.dataLayer = window.dataLayer || [];
-    document.getElementById('pricing_cta').addEventListener('click', () => {
-      window.dataLayer.push({ event: 'select_plan', plan_name: 'pro' });
-      location.href = 'checkout.html';
+
+    var planButtons = document.querySelectorAll('.plan-btn');
+
+    planButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var plan = button.getAttribute('data-plan');
+        var value = button.getAttribute('data-value');
+
+        window.dataLayer.push({
+          event: 'select_plan',
+          plan_type: plan,
+          value: value
+        });
+      });
     });
   </script>
 </body>
