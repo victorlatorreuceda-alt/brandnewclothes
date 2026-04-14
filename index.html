@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="es">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HabitFlow | Build habits that actually stick</title>
+
   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -8,17 +12,177 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-M4LBPDSQ');</script>
 <!-- End Google Tag Manager -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Web de Pruebas GA4 + GTM</title>
+  
   <style>
-    body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px; line-height: 1.4; }
-    header { display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
-    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 16px 0; }
-    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #333; background: #fff; cursor: pointer; }
-    input { padding: 10px 12px; border-radius: 10px; border: 1px solid #aaa; width: 100%; }
-    nav a { margin-right: 12px; }
-    .muted { color: #666; font-size: 14px; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #1f2937;
+      background: #f8fafc;
+      line-height: 1.5;
+    }
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #374151;
+      font-size: 14px;
+    }
+    .hero {
+      padding: 72px 0 56px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin: 0 0 18px;
+      color: #111827;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #4b5563;
+      margin: 0 0 24px;
+      max-width: 620px;
+    }
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #2563eb;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+    }
+    .btn-secondary {
+      background: white;
+      color: #2563eb;
+    }
+    .hero-card, .card, .testimonial, .cta-box {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+    .hero-card h3,
+    .card h3,
+    .testimonial h3 {
+      margin-top: 0;
+      color: #111827;
+    }
+    .muted {
+      color: #6b7280;
+      font-size: 14px;
+    }
+    section {
+      padding: 56px 0;
+    }
+    .section-title {
+      font-size: 34px;
+      margin: 0 0 12px;
+      color: #111827;
+    }
+    .section-subtitle {
+      color: #6b7280;
+      margin: 0 0 28px;
+      max-width: 700px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .steps {
+      counter-reset: step;
+    }
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .cta-section {
+      padding-bottom: 72px;
+    }
+    .cta-box {
+      text-align: center;
+      padding: 36px 24px;
+    }
+    footer {
+      padding: 28px 0 48px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+    @media (max-width: 900px) {
+      .hero-grid, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 36px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -26,63 +190,177 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4LBPDSQ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <header>
-    <h1>Laboratorio de medición</h1>
-    <nav>
-  <a href="index.html">Inicio</a> |
-  <a href="pricing.html">Pricing</a> |
-  <a href="checkout.html">Checkout</a> |
-  <a href="signup.html">Signup</a> |
-  <a href="login.html">Login</a> |
-  <a href="dashboard.html">Dashboard</a> |
-  <a href="content.html">Content</a> |
-  <a href="support.html">Support</a>
-</nav>
 
- 
+  <header>
+    <div class="container topbar">
+      <a class="brand" href="index.html">HabitFlow</a>
+
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="signup.html">Signup</a>
+        <a href="login.html">Login</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="content.html">Content</a>
+        <a href="support.html">Support</a>
+        <a href="checkout.html">Checkout</a>
+      </nav>
+    </div>
   </header>
 
-  <p class="muted">Esta pedazo de web está hecha para practicar GA4 y GTM con eventos (click, scroll, form submit, funnel).</p>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Habit tracking for real consistency</span>
+          <h1>Build habits that actually stick</h1>
+          <p>
+            HabitFlow helps you create routines, stay accountable and turn daily actions into long-term progress.
+            Start simple, measure what matters and improve over time.
+          </p>
 
-  <div class="card">
-    <h2>CTA principal</h2>
-    <button id="cta_main">Click CTA</button>
-  </div>
+          <div class="actions">
+            <a class="btn btn-primary" id="cta_main" href="signup.html">Start free</a>
+            <a class="btn btn-secondary" href="pricing.html">View pricing</a>
+          </div>
 
-  <div class="card">
-    <h2>Formulario (lead)</h2>
-    <form id="lead_form">
-      <label>Email</label><br/>
-      <input id="email" name="email" type="email" placeholder="tu@email.com" required />
-      <br/><br/>
-      <button type="submit">Enviar</button>
-    </form>
-    <p class="muted" id="lead_msg" style="display:none;">Enviado (fake). Ideal para evento generate_lead.</p>
-  </div>
+          <p class="muted">
+            Ideal for testing signup flows, pricing pages, checkout journeys and analytics setups.
+          </p>
+        </div>
 
-  <div class="card">
-    <h2>Scroll test</h2>
-    <p>Haz scroll para disparar triggers de scroll (25/50/75/90%).</p>
-    <div style="height:1200px;"></div>
-    <p>Fin.</p>
-  </div>
+        <div class="hero-card">
+          <h3>Your week at a glance</h3>
+          <p class="muted">A simple preview of the kind of product experience this site simulates.</p>
+          <ul>
+            <li>5 habits tracked this week</li>
+            <li>83% completion rate</li>
+            <li>4 day streak on your morning routine</li>
+            <li>1 missed session to recover</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Why HabitFlow</h2>
+        <p class="section-subtitle">
+          This product is designed to feel like a real subscription app so you can test user journeys,
+          events, conversions and behaviour analysis with something more believable.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Track your habits</h3>
+            <p>Create routines, check in daily and keep your progress visible.</p>
+          </div>
+
+          <div class="card">
+            <h3>Stay consistent</h3>
+            <p>Use streaks, reminders and simple structure to keep momentum going.</p>
+          </div>
+
+          <div class="card">
+            <h3>Upgrade when ready</h3>
+            <p>Move from a free plan to advanced tracking and deeper insights.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps">
+      <div class="container">
+        <h2 class="section-title">How it works</h2>
+        <p class="section-subtitle">
+          A simple three-step flow that also gives you a clean structure for analytics and funnel analysis.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="step-number">1</div>
+            <h3>Create your account</h3>
+            <p>Sign up in seconds and define your first routines.</p>
+          </div>
+
+          <div class="card">
+            <div class="step-number">2</div>
+            <h3>Track your progress</h3>
+            <p>Use the dashboard to log actions and build consistency.</p>
+          </div>
+
+          <div class="card">
+            <div class="step-number">3</div>
+            <h3>Scale with premium tools</h3>
+            <p>Unlock more tracking, better visibility and deeper habit insights.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">What users say</h2>
+        <p class="section-subtitle">
+          Simple placeholder social proof to make the landing page feel more complete and realistic.
+        </p>
+
+        <div class="grid-3">
+          <div class="testimonial">
+            <h3>“It finally feels manageable”</h3>
+            <p>I stopped overcomplicating my routines and focused on daily consistency.</p>
+            <p class="muted">— Marta, freelance designer</p>
+          </div>
+
+          <div class="testimonial">
+            <h3>“Clean, simple and motivating”</h3>
+            <p>The product makes it easy to see progress without overwhelming me.</p>
+            <p class="muted">— Daniel, product analyst</p>
+          </div>
+
+          <div class="testimonial">
+            <h3>“A good balance of structure and flexibility”</h3>
+            <p>I can keep my routine visible and improve it over time.</p>
+            <p class="muted">— Laura, marketing lead</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="section-title">Ready to build better habits?</h2>
+          <p class="section-subtitle" style="margin-left:auto; margin-right:auto;">
+            Start free, explore the product and test the complete journey from first visit to purchase.
+          </p>
+          <div class="actions" style="justify-content:center; margin-bottom:0;">
+            <a class="btn btn-primary" href="signup.html">Create free account</a>
+            <a class="btn btn-secondary" href="pricing.html">See plans</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      HabitFlow — demo product for analytics, CRO and experimentation practice.
+    </div>
+  </footer>
 
   <script>
-    // Eventos "fake" para practicar (GTM puede capturar clicks y submits sin tocar JS,
-    // pero esto te permite también practicar dataLayer si quieres)
     window.dataLayer = window.dataLayer || [];
 
-    document.getElementById('cta_main').addEventListener('click', () => {
-      window.dataLayer.push({ event: 'cta_click', cta_name: 'main_cta' });
-      alert('CTA click (prueba).');
-    });
-
-    document.getElementById('lead_form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('email').value || '';
-      window.dataLayer.push({ event: 'lead_submit', lead_email_domain: email.split('@')[1] || '' });
-      document.getElementById('lead_msg').style.display = 'block';
-    });
+    var cta = document.getElementById('cta_main');
+    if (cta) {
+      cta.addEventListener('click', function () {
+        window.dataLayer.push({
+          event: 'cta_click',
+          cta_name: 'start_free_home'
+        });
+      });
+    }
   </script>
 </body>
 </html>
