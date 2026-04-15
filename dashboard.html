@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dashboard</title>
+  <title>HabitFlow Dashboard</title>
 
  <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -12,6 +12,199 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-M4LBPDSQ');</script>
 <!-- End Google Tag Manager -->
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+      line-height: 1.5;
+    }
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 18px 0;
+    }
+    .brand {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #374151;
+      font-size: 14px;
+    }
+    .hero {
+      padding: 40px 0 20px;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 38px;
+      margin: 0 0 10px;
+      color: #111827;
+    }
+    .subtitle {
+      color: #6b7280;
+      max-width: 700px;
+      margin: 0;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      padding: 20px 0 72px;
+    }
+    .stack {
+      display: grid;
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+    .card h2, .card h3 {
+      margin-top: 0;
+      color: #111827;
+    }
+    .muted {
+      color: #6b7280;
+      font-size: 14px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+    .habit-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .habit-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      background: #ffffff;
+    }
+    .habit-meta strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #2563eb;
+      cursor: pointer;
+      background: white;
+      color: #2563eb;
+    }
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+    }
+    .timeline {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .timeline-item {
+      padding: 14px 16px;
+      border-left: 4px solid #93c5fd;
+      background: #f8fafc;
+      border-radius: 10px;
+    }
+    .notice {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      display: none;
+    }
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .stats {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -19,40 +212,184 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <h1>Dashboard</h1>
+  <header>
+    <div class="container topbar">
+      <a class="brand" href="index.html">HabitFlow</a>
 
-  <nav>
-    <a href="index.html">Inicio</a> |
-    <a href="pricing.html">Pricing</a> |
-    <a href="checkout.html">Checkout</a> |
-    <a href="signup.html">Signup</a> |
-    <a href="login.html">Login</a> |
-    <a href="dashboard.html">Dashboard</a> |
-    <a href="content.html">Content</a> |
-    <a href="support.html">Support</a>
-  </nav>
-  <hr/>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="signup.html">Signup</a>
+        <a href="login.html">Login</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="content.html">Content</a>
+        <a href="support.html">Support</a>
+        <a href="checkout.html">Checkout</a>
+      </nav>
+    </div>
+  </header>
 
-  <p>Zona simulada.</p>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Welcome back</span>
+        <h1>Your habit dashboard</h1>
+        <p class="subtitle">
+          This area simulates the post-signup product experience so you can test activation, engagement and feature usage events.
+        </p>
+      </div>
+    </section>
 
-  <button id="feature_a">Usar Feature A</button>
-  <button id="feature_b">Usar Feature B</button>
-  <button id="logout_btn">Logout</button>
+    <section>
+      <div class="container layout">
+        <div class="stack">
+          <div class="card">
+            <h2>Today’s progress</h2>
+            <p class="muted">A simple view of performance to make the product feel more real.</p>
+
+            <div class="stats">
+              <div class="stat">
+                <strong>4/5</strong>
+                <span class="muted">Habits completed</span>
+              </div>
+              <div class="stat">
+                <strong>8</strong>
+                <span class="muted">Current streak</span>
+              </div>
+              <div class="stat">
+                <strong>83%</strong>
+                <span class="muted">Weekly consistency</span>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="btn btn-primary" id="feature_track_today">Track today</button>
+              <button class="btn" id="feature_create_habit">Create new habit</button>
+              <button class="btn" id="feature_view_stats">View advanced stats</button>
+            </div>
+
+            <div class="notice" id="feature_notice">
+              Action recorded successfully.
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Active habits</h2>
+            <div class="habit-list">
+              <div class="habit-item">
+                <div class="habit-meta">
+                  <strong>Morning stretch</strong>
+                  <span class="muted">Completed 6 of the last 7 days</span>
+                </div>
+                <span class="pill">Health</span>
+              </div>
+
+              <div class="habit-item">
+                <div class="habit-meta">
+                  <strong>Deep work session</strong>
+                  <span class="muted">Best streak this month: 9 days</span>
+                </div>
+                <span class="pill">Focus</span>
+              </div>
+
+              <div class="habit-item">
+                <div class="habit-meta">
+                  <strong>Read 20 minutes</strong>
+                  <span class="muted">Current streak: 4 days</span>
+                </div>
+                <span class="pill">Learning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <h3>Recent activity</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                Checked in your morning stretch habit.
+              </div>
+              <div class="timeline-item">
+                Completed your weekly focus goal.
+              </div>
+              <div class="timeline-item">
+                Missed one reading session and recovered the next day.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Account actions</h3>
+            <p class="muted">Useful for feature usage and retention-style measurement.</p>
+
+            <div class="actions">
+              <a class="btn" href="pricing.html" id="upgrade_click">Upgrade plan</a>
+              <button class="btn" id="logout_btn">Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <script>
     window.dataLayer = window.dataLayer || [];
-    document.getElementById('feature_a').addEventListener('click', function(){
-      window.dataLayer.push({ event: 'feature_use', feature_name: 'A' });
-      alert('Feature A usada');
-    });
-    document.getElementById('feature_b').addEventListener('click', function(){
-      window.dataLayer.push({ event: 'feature_use', feature_name: 'B' });
-      alert('Feature B usada');
-    });
-    document.getElementById('logout_btn').addEventListener('click', function(){
-      window.dataLayer.push({ event: 'logout' });
-      location.href = 'index.html';
-    });
+
+    function pushFeatureEvent(featureName) {
+      window.dataLayer.push({
+        event: 'feature_use',
+        feature_name: featureName
+      });
+
+      var notice = document.getElementById('feature_notice');
+      if (notice) {
+        notice.style.display = 'block';
+        notice.textContent = 'Action recorded: ' + featureName;
+      }
+    }
+
+    var trackToday = document.getElementById('feature_track_today');
+    var createHabit = document.getElementById('feature_create_habit');
+    var viewStats = document.getElementById('feature_view_stats');
+    var upgradeClick = document.getElementById('upgrade_click');
+    var logoutBtn = document.getElementById('logout_btn');
+
+    if (trackToday) {
+      trackToday.addEventListener('click', function () {
+        pushFeatureEvent('track_today');
+      });
+    }
+
+    if (createHabit) {
+      createHabit.addEventListener('click', function () {
+        pushFeatureEvent('create_habit');
+      });
+    }
+
+    if (viewStats) {
+      viewStats.addEventListener('click', function () {
+        pushFeatureEvent('view_advanced_stats');
+      });
+    }
+
+    if (upgradeClick) {
+      upgradeClick.addEventListener('click', function () {
+        window.dataLayer.push({
+          event: 'upgrade_click',
+          location: 'dashboard'
+        });
+      });
+    }
+
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', function () {
+        window.dataLayer.push({
+          event: 'logout'
+        });
+        location.href = 'index.html';
+      });
+    }
   </script>
 </body>
 </html>
