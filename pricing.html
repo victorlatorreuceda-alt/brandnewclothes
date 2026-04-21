@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
 
             <a class="btn btn-secondary plan-btn"
-               href="checkout.html"
+               href="checkout.html?plan=free&value=0"
                data-plan="free"
                data-value="0"
                id="plan_free">Choose Free</a>
@@ -264,7 +264,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
 
             <a class="btn btn-primary plan-btn"
-               href="checkout.html"
+               href="checkout.html?plan=pro&value=9.99"
                data-plan="pro"
                data-value="9.99"
                id="plan_pro">Choose Pro</a>
@@ -283,7 +283,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
 
             <a class="btn btn-secondary plan-btn"
-               href="checkout.html"
+               href="checkout.html?plan=premium&value=19.99"
                data-plan="premium"
                data-value="19.99"
                id="plan_premium">Choose Premium</a>
@@ -320,23 +320,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </footer>
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
+ <script>
+  window.dataLayer = window.dataLayer || [];
 
-    var planButtons = document.querySelectorAll('.plan-btn');
+  var planButtons = document.querySelectorAll('.plan-btn');
 
-    planButtons.forEach(function (button) {
-      button.addEventListener('click', function () {
-        var plan = button.getAttribute('data-plan');
-        var value = button.getAttribute('data-value');
+  planButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var plan = button.getAttribute('data-plan');
+      var value = button.getAttribute('data-value');
 
-        window.dataLayer.push({
-          event: 'select_plan',
-          plan_type: plan,
-          value: value
-        });
+      window.dataLayer.push({
+        event: 'select_plan',
+        plan_type: plan,
+        value: value
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
