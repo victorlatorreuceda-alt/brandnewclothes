@@ -336,11 +336,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>
     window.dataLayer = window.dataLayer || [];
 
-    function pushFeatureEvent(featureName) {
-      window.dataLayer.push({
-        event: 'feature_use',
-        feature_name: featureName
-      });
+   function pushFeatureEvent(featureName) {
+  window.dataLayer.push({
+    event: 'feature_use',
+    feature_name: featureName,
+    user_type: 'registered'
+  });
+}
 
       var notice = document.getElementById('feature_notice');
       if (notice) {
@@ -376,17 +378,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (upgradeClick) {
       upgradeClick.addEventListener('click', function () {
         window.dataLayer.push({
-          event: 'upgrade_click',
-          location: 'dashboard'
-        });
+  event: 'upgrade_click',
+  location: 'dashboard',
+  user_type: 'registered'
+});
       });
     }
 
     if (logoutBtn) {
       logoutBtn.addEventListener('click', function () {
         window.dataLayer.push({
-          event: 'logout'
-        });
+  event: 'logout',
+  user_type: 'registered'
+});
         location.href = 'index.html';
       });
     }
