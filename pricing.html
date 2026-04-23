@@ -323,6 +323,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   window.dataLayer = window.dataLayer || [];
 
+  window.dataLayer.push({
+    event: 'view_pricing',
+    user_type: 'guest'
+  });
+
   var planButtons = document.querySelectorAll('.plan-btn');
 
   planButtons.forEach(function (button) {
