@@ -352,15 +352,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>
     window.dataLayer = window.dataLayer || [];
 
-    var cta = document.getElementById('cta_main');
-    if (cta) {
-      cta.addEventListener('click', function () {
-        window.dataLayer.push({
-          event: 'cta_click',
-          cta_name: 'start_free_home'
-        });
-      });
-    }
+   var cta = document.getElementById('cta_main');
+if (cta) {
+  cta.addEventListener('click', function () {
+    window.dataLayer.push({
+      event: 'cta_click',
+      cta_name: 'start_free_home',
+      cta_location: 'home_hero',
+      user_type: 'guest'
+    });
+  });
+}
   </script>
 </body>
 </html>
