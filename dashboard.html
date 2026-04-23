@@ -377,9 +377,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     if (upgradeClick) {
       upgradeClick.addEventListener('click', function () {
-        window.dataLayer.push({
+       window.dataLayer.push({
   event: 'upgrade_click',
   location: 'dashboard',
+  cta_location: 'dashboard_upgrade',
   user_type: 'registered'
 });
       });
