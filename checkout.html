@@ -287,12 +287,13 @@
         e.preventDefault();
 
         window.dataLayer.push({
-          event: 'purchase',
-          transaction_id: 'txn_' + Date.now(),
-          plan_type: plan,
-          value: value,
-          currency: 'EUR'
-        });
+  event: 'purchase',
+  transaction_id: 'txn_' + Date.now(),
+  plan_type: plan,
+  value: value,
+  currency: 'EUR',
+  user_type: 'guest'
+});
 
         if (purchaseStatus) {
           purchaseStatus.style.display = 'block';
