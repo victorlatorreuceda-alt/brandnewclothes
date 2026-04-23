@@ -274,13 +274,12 @@
 
     if (beginCheckoutBtn) {
       beginCheckoutBtn.addEventListener('click', function () {
-        window.dataLayer.push({
-          event: 'begin_checkout',
-          plan_type: plan,
-          value: value
-        });
-        alert('Begin checkout event sent');
-      });
+    window.dataLayer.push({
+  event: 'begin_checkout',
+  plan_type: plan,
+  value: value,
+  user_type: 'guest'
+});
     }
 
     if (checkoutForm) {
