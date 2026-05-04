@@ -14,116 +14,123 @@
       f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-M4LBPDSQ');
   </script>
-  <!-- End GTM -->
+  <!-- End Google Tag Manager -->
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-codex/update-checkout.html-for-proper-checkout-functionality-7i47mr
-  <title>HabitFlow Purchase Success</title>
+  <title>Compra completada - HabitFlow</title>
+
   <style>
-    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f8fafc;
-      color: #1f2937;
+      color: #111827;
     }
-    .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
     header {
-      background: #fff;
+      background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 20;
+      padding: 16px 0;
     }
+
     .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding: 18px 0;
-    }
-    .brand {
-      font-size: 24px;
-      font-weight: 700;
-      color: #111827;
-      text-decoration: none;
-    }
-    nav { display: flex; gap: 14px; flex-wrap: wrap; }
-    nav a { text-decoration: none; color: #374151; font-size: 14px; }
-
-    .page { padding: 52px 0 72px; }
-    .card {
-      max-width: 720px;
+      max-width: 900px;
       margin: 0 auto;
-      background: #fff;
+      padding: 0 20px;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #111827;
+    }
+
+    nav a {
+      margin-left: 16px;
+      text-decoration: none;
+      color: #374151;
+      font-size: 14px;
+    }
+
+    .card {
+      background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 20px;
-      padding: 34px;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+      padding: 32px;
       text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
     }
+
     .badge {
       display: inline-block;
       background: #dcfce7;
       color: #166534;
-      padding: 7px 12px;
+      padding: 6px 12px;
       border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 14px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 16px;
     }
-    h1 { margin: 0 0 10px; font-size: 36px; color: #111827; }
-    .subtitle { margin: 0 0 24px; color: #6b7280; }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 32px;
+    }
+
     .summary {
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
+      margin-top: 20px;
       padding: 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: #f9fafb;
       text-align: left;
-      margin-bottom: 24px;
     }
-    .summary p { margin: 0 0 10px; }
-    .summary p:last-child { margin-bottom: 0; }
-    .summary strong { color: #111827; }
+
     .actions {
+      margin-top: 24px;
       display: flex;
       justify-content: center;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 10px;
     }
+
     .btn {
-      padding: 11px 16px;
+      padding: 10px 16px;
       border-radius: 10px;
       border: 1px solid #2563eb;
+      background: #ffffff;
+      color: #2563eb;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
+      font-weight: 600;
     }
-    .btn-primary { background: #2563eb; color: #fff; }
-    .btn-secondary { background: #fff; color: #2563eb; }
 
-    @media (max-width: 900px) {
-      .card { padding: 24px; }
-      h1 { font-size: 30px; }
+    .btn-primary {
+      background: #2563eb;
+      color: #ffffff;
     }
   </style>
 </head>
-<body>
 
-  <title>Purchase success</title>
-</head>
-<body style="font-family:Arial; max-width:760px; margin:40px auto; padding:0 16px;">
- main
+<body>
+  <!-- GTM noscript -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4LBPDSQ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
 
-codex/update-checkout.html-for-proper-checkout-functionality-7i47mr
   <header>
-    <div class="container topbar">
+    <div class="topbar">
       <a class="brand" href="index.html">HabitFlow</a>
       <nav>
         <a href="index.html">Home</a>
@@ -133,48 +140,33 @@ codex/update-checkout.html-for-proper-checkout-functionality-7i47mr
     </div>
   </header>
 
-  <main class="page">
-    <div class="container">
-      <section class="card">
-        <span class="badge">Payment confirmed</span>
-        <h1>✅ Compra completada</h1>
-        <p class="subtitle">Tu suscripción está activa y ya puedes seguir progresando con HabitFlow.</p>
+  <main class="container">
+    <div class="card">
+      <div class="badge">Payment confirmed</div>
 
-        <div class="summary">
-          <p>Plan seleccionado: <strong id="success_plan"></strong></p>
-          <p>Precio: €<strong id="success_value"></strong> / month</p>
-        </div>
+      <h1>Compra completada</h1>
+      <p>Tu suscripción está activa y ya puedes continuar con HabitFlow.</p>
 
-        <div class="actions">
-          <a class="btn btn-primary" href="index.html">Volver a home</a>
-          <a class="btn btn-secondary" href="pricing.html">Ver pricing</a>
-          <a class="btn btn-secondary" href="dashboard.html">Ir al dashboard</a>
-        </div>
-      </section>
+      <div class="summary">
+        <p><strong>Plan seleccionado:</strong> <span id="plan">-</span></p>
+        <p><strong>Precio:</strong> €<span id="price">0</span> / month</p>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="index.html">Volver a home</a>
+        <a class="btn" href="pricing.html">Ver pricing</a>
+        <a class="btn" href="dashboard.html">Ir al dashboard</a>
+      </div>
     </div>
   </main>
-
-  <h1>✅ Compra completada</h1>
-  <p>Tu suscripción se ha activado correctamente.</p>
-  <p>Plan: <strong id="success_plan"></strong></p>
-  <p>Precio: €<strong id="success_value"></strong></p>
-
-  <p style="margin-top:20px;">
-    <a href="index.html" style="margin-right:12px;">Ir a home</a>
-    <a href="pricing.html">Volver a pricing</a>
-  </p>
- main
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const plan = params.get('plan') || 'unknown';
     const value = params.get('value') || '0';
 
-    const successPlan = document.getElementById('success_plan');
-    const successValue = document.getElementById('success_value');
-
-    if (successPlan) successPlan.textContent = plan;
-    if (successValue) successValue.textContent = value;
+    document.getElementById('plan').textContent = plan;
+    document.getElementById('price').textContent = value;
   </script>
 </body>
 </html>
