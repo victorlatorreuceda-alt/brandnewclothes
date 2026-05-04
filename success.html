@@ -18,6 +18,7 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+codex/update-checkout.html-for-proper-checkout-functionality-7i47mr
   <title>HabitFlow Purchase Success</title>
   <style>
     * { box-sizing: border-box; }
@@ -110,11 +111,17 @@
   </style>
 </head>
 <body>
+
+  <title>Purchase success</title>
+</head>
+<body style="font-family:Arial; max-width:760px; margin:40px auto; padding:0 16px;">
+ main
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4LBPDSQ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
 
+codex/update-checkout.html-for-proper-checkout-functionality-7i47mr
   <header>
     <div class="container topbar">
       <a class="brand" href="index.html">HabitFlow</a>
@@ -146,6 +153,17 @@
       </section>
     </div>
   </main>
+
+  <h1>✅ Compra completada</h1>
+  <p>Tu suscripción se ha activado correctamente.</p>
+  <p>Plan: <strong id="success_plan"></strong></p>
+  <p>Precio: €<strong id="success_value"></strong></p>
+
+  <p style="margin-top:20px;">
+    <a href="index.html" style="margin-right:12px;">Ir a home</a>
+    <a href="pricing.html">Volver a pricing</a>
+  </p>
+ main
 
   <script>
     const params = new URLSearchParams(window.location.search);
