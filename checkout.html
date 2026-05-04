@@ -1,95 +1,32 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];
-      w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),
-          dl=l!='dataLayer'?'&l='+l:'';
-      j.async=true;
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-      f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M4LBPDSQ');
-  </script>
-  <!-- End Google Tag Manager -->
+<script>
+  window.dataLayer = window.dataLayer || [];
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Checkout</title>
-</head>
+  const params = new URLSearchParams(window.location.search);
+  const plan = params.get('plan') || 'unknown';
+  const value = params.get('value') || '0';
 
-<body style="font-family:Arial; max-width:900px; margin:40px auto; padding:0 16px;">
+  document.getElementById('plan_name').textContent = plan;
+  document.getElementById('price').textContent = value;
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4LBPDSQ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager -->
+  const beginBtn = document.getElementById('begin_checkout_btn');
+  const purchaseBtn = document.getElementById('purchase_btn');
 
-  <h1>Complete your plan</h1>
-
-  <div style="display:flex; gap:40px;">
-
-    <!-- FORM -->
-    <div style="flex:1; border:1px solid #ddd; border-radius:12px; padding:16px;">
-      <h3>Billing details</h3>
-
-      <input placeholder="Your name" style="width:100%; margin-bottom:10px;" />
-      <input placeholder="you@example.com" style="width:100%; margin-bottom:10px;" />
-      <input placeholder="4242 4242 4242 4242" style="width:100%; margin-bottom:20px;" />
-
-      <button id="begin_checkout_btn">Begin checkout</button>
-      <button id="purchase_btn">Complete purchase</button>
-    </div>
-
-    <!-- SUMMARY -->
-    <div style="flex:1; border:1px solid #ddd; border-radius:12px; padding:16px;">
-      <h3>Order summary</h3>
-      <p>Selected plan: <strong id="plan_name"></strong></p>
-      <p>Price: €<span id="price"></span></p>
-    </div>
-
-  </div>
-
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    // leer parámetros URL
-    const params = new URLSearchParams(window.location.search);
-    const plan = params.get('plan') || 'unknown';
-    const value = params.get('value') || '0';
-
-    // pintar en pantalla
-    document.getElementById('plan_name').textContent = plan;
-    document.getElementById('price').textContent = value;
-
-    // BEGIN CHECKOUT
-    document.getElementById('begin_checkout_btn').addEventListener('click', () => {
-      window.dataLayer.push({
-        event: 'begin_checkout',
-        plan_type: plan,
-        value: value
-      });
-
-      console.log('begin_checkout enviado', { plan, value });
+  beginBtn.addEventListener('click', function () {
+    window.dataLayer.push({
+      event: 'begin_checkout',
+      plan_type: plan,
+      value: value
     });
+    console.log('begin_checkout enviado', { plan_type: plan, value: value });
+  });
 
-    // PURCHASE
-    document.getElementById('purchase_btn').addEventListener('click', () => {
-      window.dataLayer.push({
-        event: 'purchase',
-        plan_type: plan,
-        value: value,
-        transaction_id: Date.now().toString()
-      });
-
-      console.log('purchase enviado', { plan, value });
+  purchaseBtn.addEventListener('click', function () {
+    window.dataLayer.push({
+      event: 'purchase',
+      plan_type: plan,
+      value: value,
+      transaction_id: Date.now().toString()
     });
-  </script>
-
-</body>
-</html>
+    console.log('purchase enviado', { plan_type: plan, value: value });
+  });
+</script>
