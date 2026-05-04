@@ -18,13 +18,141 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+codex/update-checkout.html-for-proper-checkout-functionality-7i47mr
+  <title>HabitFlow Purchase Success</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+    }
+    .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 18px 0;
+    }
+    .brand {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+      text-decoration: none;
+    }
+    nav { display: flex; gap: 14px; flex-wrap: wrap; }
+    nav a { text-decoration: none; color: #374151; font-size: 14px; }
+
+    .page { padding: 52px 0 72px; }
+    .card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 34px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    h1 { margin: 0 0 10px; font-size: 36px; color: #111827; }
+    .subtitle { margin: 0 0 24px; color: #6b7280; }
+    .summary {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 16px;
+      text-align: left;
+      margin-bottom: 24px;
+    }
+    .summary p { margin: 0 0 10px; }
+    .summary p:last-child { margin-bottom: 0; }
+    .summary strong { color: #111827; }
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn {
+      padding: 11px 16px;
+      border-radius: 10px;
+      border: 1px solid #2563eb;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .btn-primary { background: #2563eb; color: #fff; }
+    .btn-secondary { background: #fff; color: #2563eb; }
+
+    @media (max-width: 900px) {
+      .card { padding: 24px; }
+      h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+
   <title>Purchase success</title>
 </head>
 <body style="font-family:Arial; max-width:760px; margin:40px auto; padding:0 16px;">
+ main
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4LBPDSQ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
+
+codex/update-checkout.html-for-proper-checkout-functionality-7i47mr
+  <header>
+    <div class="container topbar">
+      <a class="brand" href="index.html">HabitFlow</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <section class="card">
+        <span class="badge">Payment confirmed</span>
+        <h1>✅ Compra completada</h1>
+        <p class="subtitle">Tu suscripción está activa y ya puedes seguir progresando con HabitFlow.</p>
+
+        <div class="summary">
+          <p>Plan seleccionado: <strong id="success_plan"></strong></p>
+          <p>Precio: €<strong id="success_value"></strong> / month</p>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="index.html">Volver a home</a>
+          <a class="btn btn-secondary" href="pricing.html">Ver pricing</a>
+          <a class="btn btn-secondary" href="dashboard.html">Ir al dashboard</a>
+        </div>
+      </section>
+    </div>
+  </main>
 
   <h1>✅ Compra completada</h1>
   <p>Tu suscripción se ha activado correctamente.</p>
@@ -35,6 +163,7 @@
     <a href="index.html" style="margin-right:12px;">Ir a home</a>
     <a href="pricing.html">Volver a pricing</a>
   </p>
+ main
 
   <script>
     const params = new URLSearchParams(window.location.search);

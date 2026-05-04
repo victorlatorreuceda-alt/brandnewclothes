@@ -18,16 +18,181 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Checkout</title>
+  <title>HabitFlow Checkout</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+      line-height: 1.5;
+    }
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 18px 0;
+    }
+    .brand {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+      text-decoration: none;
+    }
+    nav { display: flex; gap: 14px; flex-wrap: wrap; }
+    nav a {
+      text-decoration: none;
+      color: #374151;
+      font-size: 14px;
+    }
+    .page {
+      padding: 36px 0 72px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      color: #111827;
+      font-size: 40px;
+    }
+    .subtitle {
+      margin: 0 0 24px;
+      color: #6b7280;
+      max-width: 720px;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+    .btn-link {
+      padding: 10px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      background: #fff;
+      color: #1f2937;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+    .card h3 { margin: 0 0 16px; color: #111827; font-size: 28px; }
+    .label { font-size: 13px; color: #6b7280; margin-bottom: 6px; display: block; }
+    .field {
+      width: 100%;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 11px 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      outline: none;
+    }
+    .field:focus { border-color: #2563eb; box-shadow: 0 0 0 3px #dbeafe; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+    .btn {
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-weight: 700;
+      border: 1px solid #2563eb;
+      cursor: pointer;
+    }
+    .btn-secondary { background: #fff; color: #2563eb; }
+    .btn-primary { background: #2563eb; color: #fff; }
+    .btn:disabled { opacity: 0.7; cursor: not-allowed; }
+    .summary-item { margin: 0 0 14px; color: #374151; }
+    .summary-item strong { color: #111827; }
+    #purchase_feedback { margin: 12px 0 0; color: #1d4ed8; font-weight: 700; min-height: 20px; }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 32px; }
+    }
+  </style>
 </head>
-
-<body style="font-family:Arial; max-width:900px; margin:40px auto; padding:0 16px;">
-
+<body>
   <!-- GTM noscript -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4LBPDSQ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
+
+ codex/update-checkout.html-for-proper-checkout-functionality-7i47mr
+  <header>
+    <div class="container topbar">
+      <a class="brand" href="index.html">HabitFlow</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="checkout.html">Checkout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <h1>Complete your plan</h1>
+      <p class="subtitle">Finish your subscription details and confirm your purchase in a secure checkout flow.</p>
+
+      <div class="actions">
+        <a class="btn-link" href="pricing.html">← Volver a pricing</a>
+        <a class="btn-link" href="index.html">Ir a home</a>
+      </div>
+
+      <div class="grid">
+        <section class="card">
+          <h3>Billing details</h3>
+
+          <label class="label" for="name">Name</label>
+          <input id="name" class="field" placeholder="Your name" />
+
+          <label class="label" for="email">Email</label>
+          <input id="email" class="field" placeholder="you@example.com" />
+
+          <label class="label" for="card">Card number</label>
+          <input id="card" class="field" placeholder="4242 4242 4242 4242" />
+
+          <div class="row">
+            <button class="btn btn-secondary" id="begin_checkout_btn">Begin checkout</button>
+            <button class="btn btn-primary" id="purchase_btn">Complete purchase</button>
+          </div>
+          <p id="purchase_feedback"></p>
+        </section>
+
+        <aside class="card">
+          <h3>Order summary</h3>
+          <p class="summary-item">Selected plan: <strong id="plan_name"></strong></p>
+          <p class="summary-item">Price: €<strong id="price"></strong></p>
+          <p class="summary-item" style="color:#6b7280;">All prices are billed monthly. You can change your plan anytime.</p>
+        </aside>
+      </div>
 
   <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:10px; padding:12px; margin-bottom:18px;">
     <strong>Funnel:</strong> pricing → checkout → success
@@ -57,10 +222,15 @@
       <h3>Order summary</h3>
       <p>Selected plan: <strong id="plan_name"></strong></p>
       <p>Price: €<span id="price"></span></p>
+ main
     </div>
+  </main>
+
+ codex/update-checkout.html-for-proper-checkout-functionality-7i47mr
 
   </div>
 
+ main
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -110,6 +280,5 @@
       });
     }
   </script>
-
 </body>
 </html>
