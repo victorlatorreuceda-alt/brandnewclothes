@@ -255,51 +255,33 @@
   </main>
 
   <script>
-    window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer || [];
 
-    var params = new URLSearchParams(window.location.search);
-    var plan = params.get('plan') || 'pro';
-    var value = params.get('value') || '9.99';
+  // Leer parámetros de la URL
+  const params = new URLSearchParams(window.location.search);
+  const plan = params.get('plan');
+  const value = params.get('value');
 
-    var summaryPlan = document.getElementById('summary_plan');
-    var summaryValue = document.getElementById('summary_value');
-    var summaryTotal = document.getElementById('summary_total');
-    var beginCheckoutBtn = document.getElementById('begin_checkout_btn');
-    var checkoutForm = document.getElementById('checkout_form');
-    var purchaseStatus = document.getElementById('purchase_status');
-
-    if (summaryPlan) summaryPlan.textContent = plan.charAt(0).toUpperCase() + plan.slice(1);
-    if (summaryValue) summaryValue.textContent = '€' + value;
-    if (summaryTotal) summaryTotal.textContent = '€' + value;
-
-    if (beginCheckoutBtn) {
-      beginCheckoutBtn.addEventListener('click', function () {
+  document.getElementById('begin_checkout').addEventListener('click', () => {
     window.dataLayer.push({
-  event: 'begin_checkout',
-  plan_type: plan,
-  value: value,
-  user_type: 'guest'
-});
-    }
+      event: 'begin_checkout',
+      plan_type: plan,
+      value: value,
+      currency: 'EUR'
+    });
+    alert('begin_checkout (fake)');
+  });
 
-    if (checkoutForm) {
-      checkoutForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        window.dataLayer.push({
-  event: 'purchase',
-  transaction_id: 'txn_' + Date.now(),
-  plan_type: plan,
-  value: value,
-  currency: 'EUR',
-  user_type: 'guest'
-});
-
-        if (purchaseStatus) {
-          purchaseStatus.style.display = 'block';
-        }
-      });
-    }
-  </script>
+  document.getElementById('purchase').addEventListener('click', () => {
+    window.dataLayer.push({
+      event: 'purchase',
+      plan_type: plan,
+      value: value,
+      currency: 'EUR',
+      transaction_id: String(Date.now())
+    });
+    alert('purchase (fake)');
+  });
+</script>
 </body>
 </html>
