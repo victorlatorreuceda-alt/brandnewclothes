@@ -2,286 +2,94 @@
 <html lang="es">
 <head>
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-M4LBPDSQ');</script>
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M4LBPDSQ');
+  </script>
   <!-- End Google Tag Manager -->
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HabitFlow Checkout</title>
-
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8fafc;
-      color: #1f2937;
-      line-height: 1.5;
-    }
-    .container {
-      width: 100%;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    header {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding: 18px 0;
-    }
-    .brand {
-      font-size: 24px;
-      font-weight: 700;
-      color: #111827;
-      text-decoration: none;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-    nav a {
-      text-decoration: none;
-      color: #374151;
-      font-size: 14px;
-    }
-    .hero {
-      padding: 56px 0 24px;
-    }
-    h1 {
-      font-size: 40px;
-      margin: 0 0 12px;
-      color: #111827;
-    }
-    .subtitle {
-      color: #6b7280;
-      max-width: 760px;
-      margin: 0;
-    }
-    .checkout-layout {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-      padding: 24px 0 72px;
-    }
-    .card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
-    }
-    .card h2 {
-      margin-top: 0;
-      color: #111827;
-    }
-    .muted {
-      color: #6b7280;
-      font-size: 14px;
-    }
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 8px;
-      margin-top: 16px;
-    }
-    input {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid #d1d5db;
-      font-size: 14px;
-    }
-    .summary-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 10px 0;
-      border-bottom: 1px solid #f1f5f9;
-    }
-    .summary-row:last-child {
-      border-bottom: 0;
-    }
-    .price-total {
-      font-size: 28px;
-      font-weight: 700;
-      color: #111827;
-    }
-    .actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid #2563eb;
-      cursor: pointer;
-      background: white;
-    }
-    .btn-primary {
-      background: #2563eb;
-      color: white;
-    }
-    .btn-secondary {
-      color: #2563eb;
-    }
-    .status-box {
-      margin-top: 18px;
-      padding: 14px 16px;
-      background: #eff6ff;
-      color: #1d4ed8;
-      border: 1px solid #bfdbfe;
-      border-radius: 12px;
-      display: none;
-    }
-    @media (max-width: 900px) {
-      .checkout-layout {
-        grid-template-columns: 1fr;
-      }
-      h1 {
-        font-size: 34px;
-      }
-    }
-  </style>
+  <title>Checkout</title>
 </head>
-<body>
+
+<body style="font-family:Arial; max-width:900px; margin:40px auto; padding:0 16px;">
+
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4LBPDSQ"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4LBPDSQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager -->
 
-  <header>
-    <div class="container topbar">
-      <a class="brand" href="index.html">HabitFlow</a>
+  <h1>Complete your plan</h1>
 
-      <nav>
-        <a href="index.html">Inicio</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="signup.html">Signup</a>
-        <a href="login.html">Login</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="content.html">Content</a>
-        <a href="support.html">Support</a>
-        <a href="checkout.html">Checkout</a>
-      </nav>
+  <div style="display:flex; gap:40px;">
+
+    <!-- FORM -->
+    <div style="flex:1; border:1px solid #ddd; border-radius:12px; padding:16px;">
+      <h3>Billing details</h3>
+
+      <input placeholder="Your name" style="width:100%; margin-bottom:10px;" />
+      <input placeholder="you@example.com" style="width:100%; margin-bottom:10px;" />
+      <input placeholder="4242 4242 4242 4242" style="width:100%; margin-bottom:20px;" />
+
+      <button id="begin_checkout_btn">Begin checkout</button>
+      <button id="purchase_btn">Complete purchase</button>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Complete your plan</h1>
-        <p class="subtitle">
-          This is a simulated checkout flow designed for testing analytics, plan selection, purchase behaviour and conversion paths.
-        </p>
-      </div>
-    </section>
+    <!-- SUMMARY -->
+    <div style="flex:1; border:1px solid #ddd; border-radius:12px; padding:16px;">
+      <h3>Order summary</h3>
+      <p>Selected plan: <strong id="plan_name"></strong></p>
+      <p>Price: €<span id="price"></span></p>
+    </div>
 
-    <section>
-      <div class="container checkout-layout">
-        <div class="card">
-          <h2>Billing details</h2>
-          <p class="muted">This is a fake checkout. No real payment is processed.</p>
-
-          <form id="checkout_form">
-            <label for="checkout_name">Full name</label>
-            <input id="checkout_name" type="text" placeholder="Your name" required />
-
-            <label for="checkout_email">Email</label>
-            <input id="checkout_email" type="email" placeholder="you@example.com" required />
-
-            <label for="checkout_card">Card number</label>
-            <input id="checkout_card" type="text" placeholder="4242 4242 4242 4242" required />
-
-            <div class="actions">
-              <button class="btn btn-secondary" type="button" id="begin_checkout_btn">Begin checkout</button>
-              <button class="btn btn-primary" type="submit" id="purchase_btn">Complete purchase</button>
-            </div>
-          </form>
-
-          <div class="status-box" id="purchase_status">
-            Fake purchase completed successfully.
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Order summary</h2>
-
-          <div class="summary-row">
-            <span>Selected plan</span>
-            <strong id="summary_plan">Pro</strong>
-          </div>
-
-          <div class="summary-row">
-            <span>Monthly price</span>
-            <strong id="summary_value">€9.99</strong>
-          </div>
-
-          <div class="summary-row">
-            <span>Setup fee</span>
-            <strong>€0.00</strong>
-          </div>
-
-          <div class="summary-row">
-            <span>Total today</span>
-            <span class="price-total" id="summary_total">€9.99</span>
-          </div>
-
-          <p class="muted" style="margin-top:16px;">
-            You can use this page to test checkout starts, purchase completions and plan-level reporting.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
+  </div>
 
   <script>
-  window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
 
-  // Leer parámetros de la URL
-  const params = new URLSearchParams(window.location.search);
-  const plan = params.get('plan');
-  const value = params.get('value');
+    // leer parámetros URL
+    const params = new URLSearchParams(window.location.search);
+    const plan = params.get('plan') || 'unknown';
+    const value = params.get('value') || '0';
 
-  document.getElementById('begin_checkout').addEventListener('click', () => {
-    window.dataLayer.push({
-      event: 'begin_checkout',
-      plan_type: plan,
-      value: value,
-      currency: 'EUR'
+    // pintar en pantalla
+    document.getElementById('plan_name').textContent = plan;
+    document.getElementById('price').textContent = value;
+
+    // BEGIN CHECKOUT
+    document.getElementById('begin_checkout_btn').addEventListener('click', () => {
+      window.dataLayer.push({
+        event: 'begin_checkout',
+        plan_type: plan,
+        value: value
+      });
+
+      console.log('begin_checkout enviado', { plan, value });
     });
-    alert('begin_checkout (fake)');
-  });
 
-  document.getElementById('purchase').addEventListener('click', () => {
-    window.dataLayer.push({
-      event: 'purchase',
-      plan_type: plan,
-      value: value,
-      currency: 'EUR',
-      transaction_id: String(Date.now())
+    // PURCHASE
+    document.getElementById('purchase_btn').addEventListener('click', () => {
+      window.dataLayer.push({
+        event: 'purchase',
+        plan_type: plan,
+        value: value,
+        transaction_id: Date.now().toString()
+      });
+
+      console.log('purchase enviado', { plan, value });
     });
-    alert('purchase (fake)');
-  });
-</script>
+  </script>
+
 </body>
 </html>
