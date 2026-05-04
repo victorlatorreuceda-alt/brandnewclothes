@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M4LBPDSQ');
+  </script>
+  <!-- End GTM -->
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Purchase success</title>
+</head>
+<body style="font-family:Arial; max-width:760px; margin:40px auto; padding:0 16px;">
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4LBPDSQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+  <h1>✅ Compra completada</h1>
+  <p>Tu suscripción se ha activado correctamente.</p>
+  <p>Plan: <strong id="success_plan"></strong></p>
+  <p>Precio: €<strong id="success_value"></strong></p>
+
+  <p style="margin-top:20px;">
+    <a href="index.html" style="margin-right:12px;">Ir a home</a>
+    <a href="pricing.html">Volver a pricing</a>
+  </p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const plan = params.get('plan') || 'unknown';
+    const value = params.get('value') || '0';
+
+    const successPlan = document.getElementById('success_plan');
+    const successValue = document.getElementById('success_value');
+
+    if (successPlan) successPlan.textContent = plan;
+    if (successValue) successValue.textContent = value;
+  </script>
+</body>
+</html>

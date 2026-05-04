@@ -29,12 +29,19 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
 
+  <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:10px; padding:12px; margin-bottom:18px;">
+    <strong>Funnel:</strong> pricing → checkout → success
+    <div style="margin-top:8px;">
+      <a href="pricing.html" style="display:inline-block; margin-right:8px; padding:6px 10px; border:1px solid #2563eb; border-radius:6px; text-decoration:none;">← Volver a pricing</a>
+      <a href="index.html" style="display:inline-block; padding:6px 10px; border:1px solid #2563eb; border-radius:6px; text-decoration:none;">Ir a home</a>
+    </div>
+  </div>
+
   <h1>Complete your plan</h1>
 
-  <div style="display:flex; gap:40px;">
+  <div style="display:flex; gap:40px; flex-wrap:wrap;">
 
-    <!-- FORM -->
-    <div style="flex:1; border:1px solid #ddd; border-radius:12px; padding:16px;">
+    <div style="flex:1; min-width:280px; border:1px solid #ddd; border-radius:12px; padding:16px;">
       <h3>Billing details</h3>
 
       <input placeholder="Your name" style="width:100%; margin-bottom:10px;" />
@@ -43,10 +50,10 @@
 
       <button id="begin_checkout_btn">Begin checkout</button>
       <button id="purchase_btn">Complete purchase</button>
+      <p id="purchase_feedback" style="margin-top:12px; color:#1d4ed8; font-weight:600;"></p>
     </div>
 
-    <!-- SUMMARY -->
-    <div style="flex:1; border:1px solid #ddd; border-radius:12px; padding:16px;">
+    <div style="flex:1; min-width:280px; border:1px solid #ddd; border-radius:12px; padding:16px;">
       <h3>Order summary</h3>
       <p>Selected plan: <strong id="plan_name"></strong></p>
       <p>Price: €<span id="price"></span></p>
@@ -54,47 +61,54 @@
 
   </div>
 
-  <!-- SCRIPT SIMPLE Y SIN FALLOS -->
   <script>
     window.dataLayer = window.dataLayer || [];
 
-    // Leer parámetros URL
     const params = new URLSearchParams(window.location.search);
     const plan = params.get('plan') || 'unknown';
     const value = params.get('value') || '0';
 
-    // Pintar datos
-    document.getElementById('plan_name').textContent = plan;
-    document.getElementById('price').textContent = value;
-
-    // Botones
+    const planNode = document.getElementById('plan_name');
+    const priceNode = document.getElementById('price');
     const beginBtn = document.getElementById('begin_checkout_btn');
     const purchaseBtn = document.getElementById('purchase_btn');
+    const purchaseFeedback = document.getElementById('purchase_feedback');
 
-    // BEGIN CHECKOUT
-    beginBtn.onclick = function () {
-      window.dataLayer.push({
-        event: 'begin_checkout',
-        plan_type: plan,
-        value: value,
-        currency: 'EUR'
+    if (planNode) planNode.textContent = plan;
+    if (priceNode) priceNode.textContent = value;
+
+    if (beginBtn) {
+      beginBtn.addEventListener('click', function () {
+        window.dataLayer.push({
+          event: 'begin_checkout',
+          plan_type: plan,
+          value: value,
+          currency: 'EUR'
+        });
       });
+    }
 
-      console.log('begin_checkout OK', plan, value);
-    };
+    if (purchaseBtn) {
+      purchaseBtn.addEventListener('click', function () {
+        purchaseBtn.disabled = true;
+        purchaseBtn.textContent = 'Processing...';
+        if (purchaseFeedback) {
+          purchaseFeedback.textContent = 'Processing your purchase...';
+        }
 
-    // PURCHASE
-    purchaseBtn.onclick = function () {
-      window.dataLayer.push({
-        event: 'purchase',
-        plan_type: plan,
-        value: value,
-        currency: 'EUR',
-        transaction_id: Date.now().toString()
+        window.dataLayer.push({
+          event: 'purchase',
+          plan_type: plan,
+          value: value,
+          currency: 'EUR',
+          transaction_id: Date.now().toString()
+        });
+
+        setTimeout(function () {
+          window.location.href = 'success.html?plan=' + encodeURIComponent(plan) + '&value=' + encodeURIComponent(value);
+        }, 700);
       });
-
-      console.log('purchase OK', plan, value);
-    };
+    }
   </script>
 
 </body>
