@@ -14,139 +14,215 @@
       f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-M4LBPDSQ');
   </script>
-  <!-- End GTM -->
+  <!-- End Google Tag Manager -->
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>HabitFlow Checkout</title>
+
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f8fafc;
-      color: #1f2937;
+      color: #111827;
       line-height: 1.5;
     }
+
     .container {
       width: 100%;
       max-width: 1120px;
       margin: 0 auto;
       padding: 0 20px;
     }
+
     header {
-      background: #fff;
+      background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 20;
     }
+
     .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 18px 0;
       gap: 20px;
       flex-wrap: wrap;
-      padding: 18px 0;
     }
+
     .brand {
       font-size: 24px;
       font-weight: 700;
-      color: #111827;
       text-decoration: none;
+      color: #111827;
     }
-    nav { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
     nav a {
       text-decoration: none;
       color: #374151;
       font-size: 14px;
     }
-    .page {
-      padding: 36px 0 72px;
+
+    main {
+      padding: 56px 0 72px;
     }
+
+    .hero {
+      margin-bottom: 28px;
+    }
+
     h1 {
-      margin: 0 0 10px;
-      color: #111827;
-      font-size: 40px;
+      font-size: 42px;
+      margin: 0 0 12px;
     }
+
     .subtitle {
-      margin: 0 0 24px;
       color: #6b7280;
+      margin: 0;
       max-width: 720px;
     }
-    .actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 22px;
-    }
-    .btn-link {
-      padding: 10px 14px;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
-      background: #fff;
-      color: #1f2937;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    .grid {
+
+    .checkout-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
       align-items: start;
     }
+
     .card {
-      background: #fff;
+      background: #ffffff;
       border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 24px;
+      border-radius: 20px;
+      padding: 28px;
       box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
     }
-    .card h3 { margin: 0 0 16px; color: #111827; font-size: 28px; }
-    .label { font-size: 13px; color: #6b7280; margin-bottom: 6px; display: block; }
-    .field {
-      width: 100%;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
-      padding: 11px 12px;
-      margin-bottom: 12px;
-      font-size: 14px;
-      outline: none;
+
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 18px;
     }
-    .field:focus { border-color: #2563eb; box-shadow: 0 0 0 3px #dbeafe; }
-    .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin: 16px 0 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      font-size: 14px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
     .btn {
-      border-radius: 10px;
-      padding: 11px 16px;
-      font-weight: 700;
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
       border: 1px solid #2563eb;
+      background: #ffffff;
+      color: #2563eb;
+      font-weight: 700;
+      text-decoration: none;
       cursor: pointer;
     }
-    .btn-secondary { background: #fff; color: #2563eb; }
-    .btn-primary { background: #2563eb; color: #fff; }
-    .btn:disabled { opacity: 0.7; cursor: not-allowed; }
-    .summary-item { margin: 0 0 14px; color: #374151; }
-    .summary-item strong { color: #111827; }
-    #purchase_feedback { margin: 12px 0 0; color: #1d4ed8; font-weight: 700; min-height: 20px; }
+
+    .btn-primary {
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .summary-row:last-child {
+      border-bottom: 0;
+    }
+
+    .total {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .muted {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .notice {
+      display: none;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+
+    .funnel-box {
+      margin-top: 28px;
+      padding: 20px;
+      border-radius: 16px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+    }
+
+    .funnel-box p {
+      margin-top: 0;
+      color: #1f2937;
+    }
 
     @media (max-width: 900px) {
-      .grid { grid-template-columns: 1fr; }
-      h1 { font-size: 32px; }
+      .checkout-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <!-- GTM noscript -->
+  <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4LBPDSQ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
- codex/update-checkout.html-for-proper-checkout-functionality-7i47mr
   <header>
     <div class="container topbar">
       <a class="brand" href="index.html">HabitFlow</a>
+
       <nav>
         <a href="index.html">Home</a>
         <a href="pricing.html">Pricing</a>
@@ -156,81 +232,78 @@
     </div>
   </header>
 
-  <main class="page">
+  <main>
     <div class="container">
-      <h1>Complete your plan</h1>
-      <p class="subtitle">Finish your subscription details and confirm your purchase in a secure checkout flow.</p>
+      <section class="hero">
+        <h1>Complete your plan</h1>
+        <p class="subtitle">
+          This is a simulated checkout flow for testing analytics, plan selection, purchase behaviour and conversion paths.
+        </p>
+      </section>
 
-      <div class="actions">
-        <a class="btn-link" href="pricing.html">← Volver a pricing</a>
-        <a class="btn-link" href="index.html">Ir a home</a>
-      </div>
+      <section class="checkout-grid">
+        <div class="card">
+          <h2>Billing details</h2>
+          <p class="muted">This is a fake checkout. No real payment is processed.</p>
 
-      <div class="grid">
-        <section class="card">
-          <h3>Billing details</h3>
+          <label for="checkout_name">Full name</label>
+          <input id="checkout_name" type="text" placeholder="Your name" />
 
-          <label class="label" for="name">Name</label>
-          <input id="name" class="field" placeholder="Your name" />
+          <label for="checkout_email">Email</label>
+          <input id="checkout_email" type="email" placeholder="you@example.com" />
 
-          <label class="label" for="email">Email</label>
-          <input id="email" class="field" placeholder="you@example.com" />
+          <label for="checkout_card">Card number</label>
+          <input id="checkout_card" type="text" placeholder="4242 4242 4242 4242" />
 
-          <label class="label" for="card">Card number</label>
-          <input id="card" class="field" placeholder="4242 4242 4242 4242" />
-
-          <div class="row">
-            <button class="btn btn-secondary" id="begin_checkout_btn">Begin checkout</button>
-            <button class="btn btn-primary" id="purchase_btn">Complete purchase</button>
+          <div class="actions">
+            <button class="btn" id="begin_checkout_btn" type="button">Begin checkout</button>
+            <button class="btn btn-primary" id="purchase_btn" type="button">Complete purchase</button>
           </div>
-          <p id="purchase_feedback"></p>
-        </section>
 
-        <aside class="card">
-          <h3>Order summary</h3>
-          <p class="summary-item">Selected plan: <strong id="plan_name"></strong></p>
-          <p class="summary-item">Price: €<strong id="price"></strong></p>
-          <p class="summary-item" style="color:#6b7280;">All prices are billed monthly. You can change your plan anytime.</p>
-        </aside>
-      </div>
+          <div class="notice" id="checkout_notice">
+            Processing your purchase...
+          </div>
+        </div>
 
-  <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:10px; padding:12px; margin-bottom:18px;">
-    <strong>Funnel:</strong> pricing → checkout → success
-    <div style="margin-top:8px;">
-      <a href="pricing.html" style="display:inline-block; margin-right:8px; padding:6px 10px; border:1px solid #2563eb; border-radius:6px; text-decoration:none;">← Volver a pricing</a>
-      <a href="index.html" style="display:inline-block; padding:6px 10px; border:1px solid #2563eb; border-radius:6px; text-decoration:none;">Ir a home</a>
-    </div>
-  </div>
+        <div class="card">
+          <h2>Order summary</h2>
 
-  <h1>Complete your plan</h1>
+          <div class="summary-row">
+            <span>Selected plan</span>
+            <strong id="plan_name">-</strong>
+          </div>
 
-  <div style="display:flex; gap:40px; flex-wrap:wrap;">
+          <div class="summary-row">
+            <span>Monthly price</span>
+            <strong>€<span id="price">0</span></strong>
+          </div>
 
-    <div style="flex:1; min-width:280px; border:1px solid #ddd; border-radius:12px; padding:16px;">
-      <h3>Billing details</h3>
+          <div class="summary-row">
+            <span>Setup fee</span>
+            <strong>€0.00</strong>
+          </div>
 
-      <input placeholder="Your name" style="width:100%; margin-bottom:10px;" />
-      <input placeholder="you@example.com" style="width:100%; margin-bottom:10px;" />
-      <input placeholder="4242 4242 4242 4242" style="width:100%; margin-bottom:20px;" />
+          <div class="summary-row">
+            <span>Total today</span>
+            <span class="total">€<span id="total_price">0</span></span>
+          </div>
 
-      <button id="begin_checkout_btn">Begin checkout</button>
-      <button id="purchase_btn">Complete purchase</button>
-      <p id="purchase_feedback" style="margin-top:12px; color:#1d4ed8; font-weight:600;"></p>
-    </div>
+          <p class="muted">
+            All prices are billed monthly. You can change your plan anytime.
+          </p>
+        </div>
+      </section>
 
-    <div style="flex:1; min-width:280px; border:1px solid #ddd; border-radius:12px; padding:16px;">
-      <h3>Order summary</h3>
-      <p>Selected plan: <strong id="plan_name"></strong></p>
-      <p>Price: €<span id="price"></span></p>
- main
+      <section class="funnel-box">
+        <p><strong>Funnel:</strong> pricing → checkout → success</p>
+        <div class="actions">
+          <a class="btn" href="pricing.html">← Volver a pricing</a>
+          <a class="btn" href="index.html">Ir a home</a>
+        </div>
+      </section>
     </div>
   </main>
 
- codex/update-checkout.html-for-proper-checkout-functionality-7i47mr
-
-  </div>
-
- main
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -238,47 +311,55 @@
     const plan = params.get('plan') || 'unknown';
     const value = params.get('value') || '0';
 
-    const planNode = document.getElementById('plan_name');
-    const priceNode = document.getElementById('price');
+    const planName = document.getElementById('plan_name');
+    const price = document.getElementById('price');
+    const totalPrice = document.getElementById('total_price');
     const beginBtn = document.getElementById('begin_checkout_btn');
     const purchaseBtn = document.getElementById('purchase_btn');
-    const purchaseFeedback = document.getElementById('purchase_feedback');
+    const notice = document.getElementById('checkout_notice');
 
-    if (planNode) planNode.textContent = plan;
-    if (priceNode) priceNode.textContent = value;
+    planName.textContent = plan;
+    price.textContent = value;
+    totalPrice.textContent = value;
 
-    if (beginBtn) {
-      beginBtn.addEventListener('click', function () {
-        window.dataLayer.push({
-          event: 'begin_checkout',
-          plan_type: plan,
-          value: value,
-          currency: 'EUR'
-        });
+    beginBtn.addEventListener('click', function () {
+      window.dataLayer.push({
+        event: 'begin_checkout',
+        plan_type: plan,
+        value: value,
+        currency: 'EUR'
       });
-    }
 
-    if (purchaseBtn) {
-      purchaseBtn.addEventListener('click', function () {
-        purchaseBtn.disabled = true;
-        purchaseBtn.textContent = 'Processing...';
-        if (purchaseFeedback) {
-          purchaseFeedback.textContent = 'Processing your purchase...';
-        }
-
-        window.dataLayer.push({
-          event: 'purchase',
-          plan_type: plan,
-          value: value,
-          currency: 'EUR',
-          transaction_id: Date.now().toString()
-        });
-
-        setTimeout(function () {
-          window.location.href = 'success.html?plan=' + encodeURIComponent(plan) + '&value=' + encodeURIComponent(value);
-        }, 700);
+      console.log('begin_checkout sent', {
+        plan_type: plan,
+        value: value,
+        currency: 'EUR'
       });
-    }
+    });
+
+    purchaseBtn.addEventListener('click', function () {
+      purchaseBtn.disabled = true;
+      purchaseBtn.textContent = 'Processing...';
+      notice.style.display = 'block';
+
+      window.dataLayer.push({
+        event: 'purchase',
+        plan_type: plan,
+        value: value,
+        currency: 'EUR',
+        transaction_id: Date.now().toString()
+      });
+
+      console.log('purchase sent', {
+        plan_type: plan,
+        value: value,
+        currency: 'EUR'
+      });
+
+      setTimeout(function () {
+        window.location.href = 'success.html?plan=' + encodeURIComponent(plan) + '&value=' + encodeURIComponent(value);
+      }, 900);
+    });
   </script>
 </body>
 </html>
